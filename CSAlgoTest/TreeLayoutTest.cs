@@ -1,6 +1,6 @@
 namespace CSAlgoTest
 {
-    public class UnitTest1
+    public class TreeLayoutTest
     {
         [Fact]
         public void EmptyListWhenZeroElement()
