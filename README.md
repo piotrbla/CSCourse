@@ -1,2 +1,2 @@
 # CSCourse
-Codes for youtube tutorials
+Code for youtube tutorials
