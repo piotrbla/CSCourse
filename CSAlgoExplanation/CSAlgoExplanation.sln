@@ -6,6 +6,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAlgoExplanation", "CSAlgo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAlgoLibrary", "CSAlgoLibrary\CSAlgoLibrary.csproj", "{9FCABFA9-E708-46A4-8454-2E50548AA26B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSAlgoTest", "..\CSAlgoTest\CSAlgoTest.csproj", "{89657695-1163-481B-9F92-C365959C0ED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{9FCABFA9-E708-46A4-8454-2E50548AA26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FCABFA9-E708-46A4-8454-2E50548AA26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FCABFA9-E708-46A4-8454-2E50548AA26B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89657695-1163-481B-9F92-C365959C0ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89657695-1163-481B-9F92-C365959C0ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89657695-1163-481B-9F92-C365959C0ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89657695-1163-481B-9F92-C365959C0ED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

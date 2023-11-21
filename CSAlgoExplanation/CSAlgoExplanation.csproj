@@ -17,9 +17,10 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -47,5 +48,8 @@
     <Compile Remove="CSAlgoTest\obj\Debug\net6.0\CSAlgoTest.GlobalUsings.g.cs" />
     <Compile Remove="CSAlgoTest\UnitTest1.cs" />
     <Compile Remove="CSAlgoTest\Usings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="CSAlgoLibrary\CSAlgoLibrary.csproj" />
   </ItemGroup>
 </Project>
