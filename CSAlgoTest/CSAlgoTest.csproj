@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CSAlgoExplanation\CSAlgoLibrary\CSAlgoLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

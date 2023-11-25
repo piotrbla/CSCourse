@@ -7,3 +7,5 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CSAlgoExplanation.frmAlgo.drawingBox_Paint(System.Object,System.Windows.Forms.PaintEventArgs)")]
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~F:CSAlgoExplanation.frmAlgo._colorPen")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CSAlgoExplanation.frmAlgo.DrawShorterLine(System.Drawing.Pen,System.Drawing.Point,System.Drawing.Point,System.Int32,System.Windows.Forms.PaintEventArgs)")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:CSAlgoExplanation.frmAlgo.DrawShorterLine(System.Drawing.Pen,CSAlgoLibrary.Point,CSAlgoLibrary.Point,System.Int32,System.Windows.Forms.PaintEventArgs)")]

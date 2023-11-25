@@ -10,49 +10,46 @@
         
         public static List<List<Point>> GetLayout(int rowCount, int width, int height)
         {
+            var widthMargin = 40;
             var result = new List<List<Point>>();
             if (rowCount == 0)
             {
                 return result;
             }
+            for (int i = 0; i < rowCount; i++)
+            {
+                var row = new List<Point>();
+                result.Add(row);
+            }
             var mediumWidth = width / 2;
             var rowHeight = height / rowCount;
             var rowHeightHalf = rowHeight / 2;
-            var row = new List<Point>();
-            row.Add(new Point { X = mediumWidth, Y = rowHeightHalf });
-            result.Add(row);
+            result[0].Add(new Point { X = mediumWidth, Y = rowHeightHalf });
 
-            var index = 1;
-            var elementsInRow = 2;
+            var index = rowCount - 1;
+            var elementsInRow = Math.Pow(2, index);
             var notDrawnElement = elementsInRow - 1;
-            var xStart = mediumWidth - (mediumWidth / 2);
-            var xEnd = mediumWidth + (mediumWidth / 2);
-            while (index < rowCount)
+            var xStart = widthMargin;
+            var xEnd = width - widthMargin;
+            var elementWidth = (xEnd - xStart) / (elementsInRow - 1);
+
+            while (index>0)
             {
-                var nextRow = new List<Point>();
-                var yCenter = index * rowHeight + rowHeightHalf;
-                var rowWidth = xEnd - xStart;
-                var xValue = xStart ;
-                var xStep = rowWidth / elementsInRow;
-                for (int i = 0; i <= elementsInRow; i++)
+                var yCenter = rowHeight * index + rowHeightHalf;
+                var xValue = xStart;
+                elementWidth = (xEnd - xStart) / (elementsInRow - 1);
+                for (int i = 0; i < elementsInRow; i++)
                 {
-                    if (i != notDrawnElement)
-                        nextRow.Add(new Point
-                        {
-                            X = xValue,
-                            Y = yCenter
-                        });
-                    xValue += xStep;
+                    result[index].Add(new Point { X = xValue, Y = yCenter });
+                    xValue += (int)elementWidth;
                 }
 
-                xStart /= 2;
-                xEnd += xStart;
-                index++;
-                result.Add(nextRow);
-                notDrawnElement = elementsInRow;
-                elementsInRow *= 2;
-            }
 
+                elementsInRow /= 2;
+                xStart += (int)elementWidth / 2;
+                xEnd -= (int)elementWidth / 2;
+                index--;
+            }
             return result;
         }
 
