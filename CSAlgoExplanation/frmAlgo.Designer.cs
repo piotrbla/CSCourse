@@ -28,64 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.SuspendLayout();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            btnTest = new System.Windows.Forms.Button();
+            drawingBox = new System.Windows.Forms.PictureBox();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)drawingBox).BeginInit();
+            SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.10542F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.89459F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(2808, 1477);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.26282F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.73718F));
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
+            tableLayoutPanel1.Controls.Add(drawingBox, 0, 0);
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(3136, 1876);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnTest, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2477, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.14454F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.85545F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 143F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 216F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(293, 1439);
-            this.tableLayoutPanel2.TabIndex = 0;
+            tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(btnTest, 0, 3);
+            tableLayoutPanel2.Location = new System.Drawing.Point(2807, 19);
+            tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 5;
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.14454F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.85545F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 179F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 270F));
+            tableLayoutPanel2.Size = new System.Drawing.Size(326, 1838);
+            tableLayoutPanel2.TabIndex = 0;
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(3, 1101);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(242, 63);
-            this.btnTest.TabIndex = 0;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            btnTest.Location = new System.Drawing.Point(3, 1416);
+            btnTest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new System.Drawing.Size(269, 79);
+            btnTest.TabIndex = 0;
+            btnTest.Text = "Test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
+            // 
+            // drawingBox
+            // 
+            drawingBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            drawingBox.Location = new System.Drawing.Point(0, 0);
+            drawingBox.Margin = new System.Windows.Forms.Padding(0);
+            drawingBox.Name = "drawingBox";
+            drawingBox.Size = new System.Drawing.Size(2799, 1876);
+            drawingBox.TabIndex = 1;
+            drawingBox.TabStop = false;
+            drawingBox.Paint += drawingBox_Paint;
             // 
             // frmAlgo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2822, 1501);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmAlgo";
-            this.Text = "AlgoExplanation";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(3136, 1876);
+            Controls.Add(tableLayoutPanel1);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "frmAlgo";
+            Text = "AlgoExplanation";
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)drawingBox).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -93,6 +113,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.PictureBox drawingBox;
     }
 }
 
