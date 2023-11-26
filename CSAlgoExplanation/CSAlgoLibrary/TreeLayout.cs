@@ -28,7 +28,6 @@
 
             var index = rowCount - 1;
             var elementsInRow = Math.Pow(2, index);
-            var notDrawnElement = elementsInRow - 1;
             var xStart = widthMargin;
             var xEnd = width - widthMargin;
             var elementWidth = (xEnd - xStart) / (elementsInRow - 1);

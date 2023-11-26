@@ -73,8 +73,8 @@ namespace CSAlgoExplanation
                 {
                     for (int i = 0, j = 0; i < upperRow.Count; i++, j += 2)
                     {
-                        //DrawShorterLine(_colorPen, upperRow[i], lowerRow[j], circleRadius, e);
-                        //DrawShorterLine(_colorPen, upperRow[i], lowerRow[j+1], circleRadius, e);
+                        DrawShorterLine(_colorPen, upperRow[i], lowerRow[j], circleRadius, e);
+                        DrawShorterLine(_colorPen, upperRow[i], lowerRow[j+1], circleRadius, e);
                         //e.Graphics.DrawLine(_colorPen, upperRow[i].X, upperRow[i].Y, lowerRow[j].X, lowerRow[j].Y);
                         //e.Graphics.DrawLine(_colorPen, upperRow[i].X, upperRow[i].Y, lowerRow[j + 1].X, lowerRow[j + 1].Y);
                     }
