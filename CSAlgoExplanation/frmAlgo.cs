@@ -13,6 +13,22 @@ namespace CSAlgoExplanation
 {
     public partial class frmAlgo : Form
     {
+        internal class StringDraw
+        {
+            private Graphics _g;
+            private Font _font;
+            private Brush _brush;
+            public StringDraw(Graphics g)
+            {
+                _g = g;
+                _font = new Font("Arial", 16);
+                _brush = new SolidBrush(Color.Black);
+            }
+            public void Draw(string s, CSAlgoLibrary.Point p)
+            {
+                _g.DrawString(s, _font, _brush, p.X-10, p.Y-10);
+            }
+        }
         private List<List<CSAlgoLibrary.Point>> _layout = CSAlgoLibrary.TreeLayout.GetLayout(0, 0, 0);
         private readonly Pen _colorPen = new(Color.Blue);
         private int _rowCount = 1;
@@ -23,7 +39,7 @@ namespace CSAlgoExplanation
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-
+            _rowCount = 4;
             _layout = CSAlgoLibrary.TreeLayout.GetLayout(
                 _rowCount, drawingBox.Width, drawingBox.Height);
             _rowCount++;
@@ -51,7 +67,8 @@ namespace CSAlgoExplanation
                 (float)newStartX, (float)newStartY, 
                 (float)newEndX, (float)newEndY);
         }
-        
+
+                
         private void drawingBox_Paint(object sender, PaintEventArgs e)
         {
             var circleRadius = 25;
@@ -82,7 +99,20 @@ namespace CSAlgoExplanation
                     if(row+2 <= _layout.Count - 1)
                         lowerRow = _layout[row + 2];
                 }
-
+            }
+            //presentation code for specific tree: 6, 2, 1, 4, 3, 5, 7, 9, 8
+            if (_layout.Count == 4)
+            {
+                var draw = new StringDraw(e.Graphics);
+                draw.Draw("6", _layout[0][0]);
+                draw.Draw("2", _layout[1][0]);
+                draw.Draw("1", _layout[2][0]);
+                draw.Draw("4", _layout[2][1]);
+                draw.Draw("3", _layout[3][2]);
+                draw.Draw("5", _layout[3][3]);
+                draw.Draw("7", _layout[1][1]);
+                draw.Draw("9", _layout[2][3]);
+                draw.Draw("8", _layout[3][6]);
             }
         }
     }
