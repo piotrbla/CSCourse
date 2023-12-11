@@ -67,8 +67,11 @@ namespace CSAlgoExplanation
                 (float)newStartX, (float)newStartY, 
                 (float)newEndX, (float)newEndY);
         }
+        public class MyCustomAttribute : Attribute
+        {
+        }
 
-                
+        [MyCustom]
         private void drawingBox_Paint(object sender, PaintEventArgs e)
         {
             var circleRadius = 25;
