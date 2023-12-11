@@ -11,14 +11,14 @@ namespace CSAlgoTest
         [Fact]
         public void EmptyTreeWhenZeroElement()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             Assert.Equal(0, tree.Count);
         }
 
         [Fact]
         public void TreeHasCount1WhenOneElement()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(1);
             Assert.Equal(1, tree.Count);
         }
@@ -26,17 +26,18 @@ namespace CSAlgoTest
         [Fact]
         public void RootIsEqualtoAddedValue()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             Assert.Equal(1, tree.Count);
             Assert.NotNull(tree.Root);
             Assert.Equal(6, tree.Root.Value);
+            //tree.GetInorderStack();
         }
 
         [Fact]
         public void LeftIsLessThanRoot()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             Assert.Equal(2, tree.Count);
@@ -49,7 +50,7 @@ namespace CSAlgoTest
         [Fact]
         public void RightIsGreaterThanRoot()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -65,7 +66,7 @@ namespace CSAlgoTest
         [Fact]
         public void LeftLeftIsLessThanRoot()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -83,7 +84,7 @@ namespace CSAlgoTest
         [Fact]
         public void InorderHas2467Order()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -98,7 +99,7 @@ namespace CSAlgoTest
         [Fact]
         public void InorderHas123467Order()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -114,7 +115,7 @@ namespace CSAlgoTest
         [Fact]
         public void PreorderHas6247Order()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -129,7 +130,7 @@ namespace CSAlgoTest
         [Fact]
         public void InorderHas1to8Order()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -147,7 +148,7 @@ namespace CSAlgoTest
         [Fact]
         public  void PostOrderHas1to6Order()
         {
-            var tree = new CSAlgoLibrary.BinaryTree();
+            var tree = new CSAlgoLibrary.BinaryTree<int>();
             tree.Add(6);
             tree.Add(2);
             tree.Add(7);
@@ -164,5 +165,24 @@ namespace CSAlgoTest
             Assert.Equal("135428976", order);
         }
 
+        [Fact]
+        public void PostOrderFloatHas1to6Order()
+        {
+            var tree = new CSAlgoLibrary.BinaryTree<float>();
+            tree.Add(6.0f);
+            tree.Add(2.0f);
+            tree.Add(7.0f);
+            tree.Add(4.0f);
+            tree.Add(1.0f);
+            tree.Add(3.0f);
+            tree.Add(5.0f);
+            tree.Add(9.0f);
+            tree.Add(8.0f);
+            Assert.Equal(9.0f, tree.Count);
+            Assert.NotNull(tree.Root);
+            Assert.Equal(6.0f, tree.Root.Value);
+            string order = string.Join("", tree.GetPostorder());
+            Assert.Equal("135428976", order);
+        }
     }
 }

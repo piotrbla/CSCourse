@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 #nullable enable
 namespace CSAlgoLibrary
 {
-    public class BinaryTree
+    public class BinaryTree<T>
     {
-        public class Node
+
+ 
+        public class Node // <T>
         {
-            public int Value { get; set; }
+            public T Value { get; set; }
             public Node? Left { get; set; }
             public Node? Right { get; set; }
-            public Node(int value)
+            public Node(T value)
             {
                 Value = value;
                 Left = null;
@@ -27,9 +29,9 @@ namespace CSAlgoLibrary
             Count = 0;
             Root = null;
         }
-        public void AddNode(Node node, int value)
+        public void AddNode(Node node, T value)
         {
-            if (value < node.Value)
+            if (Comparer<T>.Default.Compare(value, node.Value) < 0)
             {
                 if (node.Left == null)
                     node.Left = new Node(value);
@@ -44,7 +46,7 @@ namespace CSAlgoLibrary
                     AddNode(node.Right, value);
             }
         }
-        public void Add(int v)
+        public void Add(T v)
         {
             Count++;
             if (Root is null)
@@ -53,7 +55,7 @@ namespace CSAlgoLibrary
                 AddNode(Root, v);
 
         }
-        private IEnumerable<int> GetInorder(Node? node)
+        private IEnumerable<T> GetInorder(Node? node)
         {
             if (node is null)
                 yield break;
@@ -71,12 +73,12 @@ namespace CSAlgoLibrary
 
 
         }
-        public IEnumerable<int> GetInorder()
+        public IEnumerable<T> GetInorder()
         {
             return GetInorder(Root);
         }
 
-        private IEnumerable<int> GetPostorder(Node? node)
+        private IEnumerable<T> GetPostorder(Node? node)
         {
             if (node is null)
                 yield break;
@@ -91,13 +93,14 @@ namespace CSAlgoLibrary
             yield return node.Value;
         }
         
-        public IEnumerable<int> GetPostorder()
+        public IEnumerable<T> GetPostorder()
         {
             return GetPostorder(Root);
         }
 
 
-        public IEnumerable<int> GetInorderStack()
+        [Obsolete("Don't use GetInorderStack, use GetInorder instead", true)]
+        public IEnumerable<T> GetInorderStack()
         {
             if (Root is null)
                 yield break;
@@ -115,7 +118,7 @@ namespace CSAlgoLibrary
                 current = current.Right;
             }
         }
-        public IEnumerable<int> GetPreorder()
+        public IEnumerable<T> GetPreorder()
         {
             if (Root is null)
                 yield break;
