@@ -6,7 +6,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAlgoExplanation", "CSAlgo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAlgoLibrary", "CSAlgoLibrary\CSAlgoLibrary.csproj", "{9FCABFA9-E708-46A4-8454-2E50548AA26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSAlgoTest", "..\CSAlgoTest\CSAlgoTest.csproj", "{89657695-1163-481B-9F92-C365959C0ED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAlgoTest", "..\CSAlgoTest\CSAlgoTest.csproj", "{89657695-1163-481B-9F92-C365959C0ED8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLibraryTest", "..\TestLibraryTest\TestLibraryTest.csproj", "{90E1641E-F2B3-4F46-A5FE-019CB8094815}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClassLibrary", "..\TestClassLibrary\TestClassLibrary.csproj", "{530CC5A8-2FE6-4CE1-8592-20CFE20CA627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBrowser", "..\DataBrowser\DataBrowser.csproj", "{8CAF2F5E-EEEF-4967-BCF5-63AB644190A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +32,18 @@ Global
 		{89657695-1163-481B-9F92-C365959C0ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89657695-1163-481B-9F92-C365959C0ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89657695-1163-481B-9F92-C365959C0ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E1641E-F2B3-4F46-A5FE-019CB8094815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E1641E-F2B3-4F46-A5FE-019CB8094815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E1641E-F2B3-4F46-A5FE-019CB8094815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E1641E-F2B3-4F46-A5FE-019CB8094815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530CC5A8-2FE6-4CE1-8592-20CFE20CA627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530CC5A8-2FE6-4CE1-8592-20CFE20CA627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530CC5A8-2FE6-4CE1-8592-20CFE20CA627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530CC5A8-2FE6-4CE1-8592-20CFE20CA627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CAF2F5E-EEEF-4967-BCF5-63AB644190A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CAF2F5E-EEEF-4967-BCF5-63AB644190A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CAF2F5E-EEEF-4967-BCF5-63AB644190A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CAF2F5E-EEEF-4967-BCF5-63AB644190A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
