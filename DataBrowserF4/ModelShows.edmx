@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ShowsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Show">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nchar" MaxLength="50" />
+          <Property Name="Length" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="UserShow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ShowId" Type="int" Nullable="false" />
+          <Property Name="Bookmark" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <Association Name="FK_UserShow_Show">
+          <End Role="Show" Type="Self.Show" Multiplicity="1" />
+          <End Role="UserShow" Type="Self.UserShow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Show">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserShow">
+              <PropertyRef Name="ShowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserShow_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserShow" Type="Self.UserShow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserShow">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ShowsModelStoreContainer">
+          <EntitySet Name="Show" EntityType="Self.Show" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserShow" EntityType="Self.UserShow" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_UserShow_Show" Association="Self.FK_UserShow_Show">
+            <End Role="Show" EntitySet="Show" />
+            <End Role="UserShow" EntitySet="UserShow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserShow_User" Association="Self.FK_UserShow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserShow" EntitySet="UserShow" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShowsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Show">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Length" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="UserShows" Relationship="Self.FK_UserShow_Show" FromRole="Show" ToRole="UserShow" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="UserShows" Relationship="Self.FK_UserShow_User" FromRole="User" ToRole="UserShow" />
+        </EntityType>
+        <EntityType Name="UserShow">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ShowId" Type="Int32" Nullable="false" />
+          <Property Name="Bookmark" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Show" Relationship="Self.FK_UserShow_Show" FromRole="UserShow" ToRole="Show" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserShow_User" FromRole="UserShow" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_UserShow_Show">
+          <End Role="Show" Type="Self.Show" Multiplicity="1" />
+          <End Role="UserShow" Type="Self.UserShow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Show">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserShow">
+              <PropertyRef Name="ShowId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserShow_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="UserShow" Type="Self.UserShow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserShow">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ShowsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Shows" EntityType="Self.Show" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserShows" EntityType="Self.UserShow" />
+          <AssociationSet Name="FK_UserShow_Show" Association="Self.FK_UserShow_Show">
+            <End Role="Show" EntitySet="Shows" />
+            <End Role="UserShow" EntitySet="UserShows" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserShow_User" Association="Self.FK_UserShow_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserShow" EntitySet="UserShows" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShowsModelStoreContainer" CdmEntityContainer="ShowsEntities">
+          <EntitySetMapping Name="Shows">
+            <EntityTypeMapping TypeName="ShowsModel.Show">
+              <MappingFragment StoreEntitySet="Show">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ShowsModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserShows">
+            <EntityTypeMapping TypeName="ShowsModel.UserShow">
+              <MappingFragment StoreEntitySet="UserShow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ShowId" ColumnName="ShowId" />
+                <ScalarProperty Name="Bookmark" ColumnName="Bookmark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
