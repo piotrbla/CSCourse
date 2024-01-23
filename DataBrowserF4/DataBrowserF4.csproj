@@ -138,11 +138,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Database1.mdf" />
     <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="ModelShows.Context.tt">
@@ -155,11 +152,8 @@
       <DependentUpon>ModelShows.edmx</DependentUpon>
       <LastGenOutput>ModelShows.cs</LastGenOutput>
     </Content>
-    <Content Include="Shows.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Shows.mdf" />
     <Content Include="Shows_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Shows.mdf</DependentUpon>
     </Content>
   </ItemGroup>
