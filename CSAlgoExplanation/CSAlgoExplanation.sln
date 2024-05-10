@@ -18,7 +18,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBrowserF4", "..\DataBro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadConsole", "..\ThreadConsole\ThreadConsole.csproj", "{107CEB22-5793-40D5-829A-C55C06ED4CFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadForms", "..\ThreadForms\ThreadForms.csproj", "{7427E1A3-6EBE-4FF7-9CC5-EFC6187E8490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadForms", "..\ThreadForms\ThreadForms.csproj", "{7427E1A3-6EBE-4FF7-9CC5-EFC6187E8490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWatcher", "..\FileWatcher\FileWatcher.csproj", "{F88A8E78-538A-40D6-A686-4CD254C79803}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{7427E1A3-6EBE-4FF7-9CC5-EFC6187E8490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7427E1A3-6EBE-4FF7-9CC5-EFC6187E8490}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7427E1A3-6EBE-4FF7-9CC5-EFC6187E8490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F88A8E78-538A-40D6-A686-4CD254C79803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F88A8E78-538A-40D6-A686-4CD254C79803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F88A8E78-538A-40D6-A686-4CD254C79803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F88A8E78-538A-40D6-A686-4CD254C79803}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
